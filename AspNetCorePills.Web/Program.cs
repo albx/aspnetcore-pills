@@ -1,3 +1,5 @@
+using AspNetCorePills.Web;
+
 var builder = WebApplication.CreateBuilder(args);
 
 //Servizi
@@ -17,6 +19,18 @@ builder.Services.AddKeyedScoped<MyService>("service");
 var app = builder.Build();
 
 //Middleware
+//app.Use(async (context, next) =>
+//{
+//    if (context.Request.Headers["X-MyHeader"].Contains("test"))
+//    {
+//        await context.Response.WriteAsync("Header test found!");
+//        return;
+//    }
+
+//    await next(context);
+//});
+
+app.UseMyMiddleware();
 
 app.MapGet(
     "/", 
@@ -27,16 +41,29 @@ app.MapGet(
 
 app.Run();
 
-#region Service
-class MyService
+class MyMiddleware
 {
-    private static int value = 0;
-
-    public MyService()
+    private readonly RequestDelegate _next;
+    public MyMiddleware(RequestDelegate next)
     {
-        value++;
+        _next = next;
     }
+    public async Task InvokeAsync(HttpContext context)
+    {
+        if (context.Request.Headers["X-MyHeader"].Contains("test"))
+        {
+            await context.Response.WriteAsync("Header test found!");
+            return;
+        }
 
-    public int GetValue() => value;
+        await _next(context);
+    }
 }
-#endregion
+
+static class MyMiddlewareExtensions
+{
+    public static IApplicationBuilder UseMyMiddleware(this IApplicationBuilder builder)
+    {
+        return builder.UseMiddleware<MyMiddleware>();
+    }
+}
