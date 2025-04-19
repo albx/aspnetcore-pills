@@ -1,8 +1,18 @@
 using AspNetCorePills.Web;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//var configurationObject = new ConfigurationObject();
+//builder.Configuration.GetSection("ConfigurationObject").Bind(configurationObject);
+
 //Servizi
+
+builder.Services.Configure<ConfigurationObject>(options =>
+{
+    options.Name = builder.Configuration["ConfigurationObject:Name"]!;
+    options.Value = builder.Configuration["ConfigurationObject:Value"]!;
+});
 
 //Singleton
 //builder.Services.AddSingleton<MyService>();
@@ -14,56 +24,27 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Services.AddTransient<MyService>();
 
 //Keyed service
-builder.Services.AddKeyedScoped<MyService>("service");
+//builder.Services.AddKeyedScoped<MyService>("service");
 
 var app = builder.Build();
 
 //Middleware
-//app.Use(async (context, next) =>
-//{
-//    if (context.Request.Headers["X-MyHeader"].Contains("test"))
-//    {
-//        await context.Response.WriteAsync("Header test found!");
-//        return;
-//    }
-
-//    await next(context);
-//});
 
 app.UseMyMiddleware();
 
 app.MapGet(
     "/", 
-    ([FromKeyedServices("service")]MyService service) =>
+    (IOptions<ConfigurationObject> configurationOptions) =>
     {
-        return $"Hello World! {service.GetValue()}";
+        return $"Hello World! {configurationOptions.Value.Name} - {configurationOptions.Value.Value}";
     });
 
 app.Run();
 
-class MyMiddleware
-{
-    private readonly RequestDelegate _next;
-    public MyMiddleware(RequestDelegate next)
-    {
-        _next = next;
-    }
-    public async Task InvokeAsync(HttpContext context)
-    {
-        if (context.Request.Headers["X-MyHeader"].Contains("test"))
-        {
-            await context.Response.WriteAsync("Header test found!");
-            return;
-        }
 
-        await _next(context);
-    }
-}
-
-static class MyMiddlewareExtensions
+record ConfigurationObject
 {
-    public static IApplicationBuilder UseMyMiddleware(this IApplicationBuilder builder)
-    {
-        return builder.UseMiddleware<MyMiddleware>();
-    }
+    public string Name { get; set; }
+
+    public string Value { get; set; }
 }
