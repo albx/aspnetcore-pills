@@ -16,8 +16,16 @@ In questo primo episodio di "Pillole di ASP.NET Core" andiamo a vedere insieme q
 
 ## Episodio 2 - Dependency injection
 
-[![Struttura di una applicazione](https://img.youtube.com/vi/0cQ5a0qPP38/0.jpg)](https://www.youtube.com/watch?v=0cQ5a0qPP38)
+[![Dependency injection](https://img.youtube.com/vi/0cQ5a0qPP38/0.jpg)](https://www.youtube.com/watch?v=0cQ5a0qPP38)
 
 In questo secondo episodio di "Pillole di ASP.NET Core" andiamo a vedere insieme come utilizzare la Dependency injection all'interno delle nostre applicazioni ASP.NET Core.
 
 ### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep2)
+
+## Episodio 3 - Middleware
+
+[![Middleware](https://img.youtube.com/vi/vCgN4iY50oI/0.jpg)](https://www.youtube.com/watch?v=vCgN4iY50oI)
+
+In questo terzo episodio di "Pillole di ASP.NET Core" andiamo a vedere insieme cosa sono i middleware e come possiamo utilizzarli all'interno delle nostre applicazioni ASP.NET Core.
+
+### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep3)
