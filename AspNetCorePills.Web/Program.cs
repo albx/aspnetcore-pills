@@ -1,5 +1,4 @@
 using AspNetCorePills.Web;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,18 +6,26 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Configuration.GetSection("ConfigurationObject").Bind(configurationObject);
 
 //Servizi
-
-builder.Services.Configure<ConfigurationObject>(options =>
+builder.Services.AddLogging(loggingBuilder =>
 {
-    options.Name = builder.Configuration["ConfigurationObject:Name"]!;
-    options.Value = builder.Configuration["ConfigurationObject:Value"]!;
+    //loggingBuilder.ClearProviders();
+    loggingBuilder.AddMyLogger(options =>
+    {
+        options.FilePath = "Logs";
+    });
 });
+
+//builder.Services.Configure<ConfigurationObject>(options =>
+//{
+//    options.Name = builder.Configuration["ConfigurationObject:Name"]!;
+//    options.Value = builder.Configuration["ConfigurationObject:Value"]!;
+//});
 
 //Singleton
 //builder.Services.AddSingleton<MyService>();
 
 //Scoped
-//builder.Services.AddScoped<MyService>();
+builder.Services.AddScoped<MyService>();
 
 //Transient
 //builder.Services.AddTransient<MyService>();
@@ -34,17 +41,11 @@ app.UseMyMiddleware();
 
 app.MapGet(
     "/", 
-    (IOptions<ConfigurationObject> configurationOptions) =>
+    (ILogger<Program> logger, MyService service) =>
     {
-        return $"Hello World! {configurationOptions.Value.Name} - {configurationOptions.Value.Value}";
+        logger.LogInformation("Hello World!");
+
+        return $"Hello World! {service.GetValue()}";
     });
 
 app.Run();
-
-
-record ConfigurationObject
-{
-    public string Name { get; set; }
-
-    public string Value { get; set; }
-}
