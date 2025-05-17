@@ -29,3 +29,11 @@ In questo secondo episodio di "Pillole di ASP.NET Core" andiamo a vedere insieme
 In questo terzo episodio di "Pillole di ASP.NET Core" andiamo a vedere insieme cosa sono i middleware e come possiamo utilizzarli all'interno delle nostre applicazioni ASP.NET Core.
 
 ### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep3)
+
+## Episodio 4 - Configuration
+
+[![Middleware](https://img.youtube.com/vi/eFZW2zFaY2o/0.jpg)](https://www.youtube.com/watch?v=eFZW2zFaY2o)
+
+In questo quarto episodio di "Pillole di ASP.NET Core" capiamo insieme come possiamo gestire file di configurazione e variabili di ambiente nelle nostre applicazioni ASP.NET Core.
+
+### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep4)
