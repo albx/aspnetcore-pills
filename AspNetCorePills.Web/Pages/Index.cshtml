@@ -1,0 +1,47 @@
+﻿@page
+@implements IDisposable
+@inject AspNetCorePills.Web.MyService MyService
+
+@model AspNetCorePills.Web.Pages.IndexModel
+@{
+    ViewBag.Title = "Razor da layout";
+
+    var test = "Prova";
+    string[] valori = ["uno", "due", "tre"];
+}
+
+<h1>Pillole di ASP.NET Core - @ViewBag.Title</h1>
+<h2>@test</h2>
+
+<h3>@DisplayValue()</h3>
+
+@try
+{
+    <h4>Service: @MyService.GetValue()</h4>
+}
+catch (Exception ex)
+{
+    <p>Si è verificato un errore</p>
+}
+
+
+<ul>
+    @foreach (var item in valori)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<form asp-page="Index" method="post">
+    <label asp-for="Input.Name"></label>
+    <input type="text" asp-for="Input.Name" />
+
+    <button type="submit">Send</button>
+</form>
+
+
+@functions{
+    string DisplayValue() => "Valore da metodo";
+
+    public void Dispose() { }
+}

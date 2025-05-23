@@ -7,4 +7,8 @@
     <UserSecretsId>cd2f590b-b332-4b23-8749-2df527f7cfcc</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>

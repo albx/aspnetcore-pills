@@ -15,23 +15,16 @@ builder.Services.AddLogging(loggingBuilder =>
     });
 });
 
-//builder.Services.Configure<ConfigurationObject>(options =>
-//{
-//    options.Name = builder.Configuration["ConfigurationObject:Name"]!;
-//    options.Value = builder.Configuration["ConfigurationObject:Value"]!;
-//});
+builder.Services.AddRazorPages();
 
-//Singleton
-//builder.Services.AddSingleton<MyService>();
+builder.Services.Configure<ConfigurationObject>(options =>
+{
+    options.Name = builder.Configuration["ConfigurationObject:Name"]!;
+    options.Value = builder.Configuration["ConfigurationObject:Value"]!;
+});
 
 //Scoped
 builder.Services.AddScoped<MyService>();
-
-//Transient
-//builder.Services.AddTransient<MyService>();
-
-//Keyed service
-//builder.Services.AddKeyedScoped<MyService>("service");
 
 var app = builder.Build();
 
@@ -39,13 +32,15 @@ var app = builder.Build();
 
 app.UseMyMiddleware();
 
-app.MapGet(
-    "/", 
-    (ILogger<Program> logger, MyService service) =>
-    {
-        logger.LogInformation("Hello World!");
+app.MapRazorPages();
 
-        return $"Hello World! {service.GetValue()}";
-    });
+//app.MapGet(
+//    "/", 
+//    (ILogger<Program> logger, MyService service) =>
+//    {
+//        logger.LogInformation("Hello World!");
+
+//        return $"Hello World! {service.GetValue()}";
+//    });
 
 app.Run();
