@@ -37,3 +37,11 @@ In questo terzo episodio di "Pillole di ASP.NET Core" andiamo a vedere insieme c
 In questo quarto episodio di "Pillole di ASP.NET Core" capiamo insieme come possiamo gestire file di configurazione e variabili di ambiente nelle nostre applicazioni ASP.NET Core.
 
 ### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep4)
+
+## Episodio 5 - Logging
+
+[![Middleware](https://img.youtube.com/vi/evHkV360BZ0/0.jpg)](https://www.youtube.com/watch?v=evHkV360BZ0)
+
+In questo quarto episodio di "Pillole di ASP.NET Core" capiamo insieme come abilitare il logging per poterlo poi utilizzare nelle nostre applicazioni ASP.NET Core.
+
+### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep5)
