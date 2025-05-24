@@ -42,6 +42,6 @@ In questo quarto episodio di "Pillole di ASP.NET Core" capiamo insieme come poss
 
 [![Middleware](https://img.youtube.com/vi/evHkV360BZ0/0.jpg)](https://www.youtube.com/watch?v=evHkV360BZ0)
 
-In questo quarto episodio di "Pillole di ASP.NET Core" capiamo insieme come abilitare il logging per poterlo poi utilizzare nelle nostre applicazioni ASP.NET Core.
+In questo quinto episodio di "Pillole di ASP.NET Core" capiamo insieme come abilitare il logging per poterlo poi utilizzare nelle nostre applicazioni ASP.NET Core.
 
 ### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep5)
