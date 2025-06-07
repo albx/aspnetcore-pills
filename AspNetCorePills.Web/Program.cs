@@ -1,4 +1,5 @@
 using AspNetCorePills.Web;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Configuration.GetSection("ConfigurationObject").Bind(configurationObject);
 
 //Servizi
+
 builder.Services.AddLogging(loggingBuilder =>
 {
     //loggingBuilder.ClearProviders();
@@ -29,6 +31,20 @@ builder.Services.AddScoped<MyService>();
 var app = builder.Build();
 
 //Middleware
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+        Path.Combine(builder.Environment.ContentRootPath, "MyStaticFiles")),
+    RequestPath = "/StaticFiles",
+    OnPrepareResponse = ctx =>
+    {
+        ctx.Context.Response.Headers.Append(
+             "Cache-Control", $"public, max-age=3600");
+    }
+});
 
 app.UseMyMiddleware();
 

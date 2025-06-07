@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePills.Web", "AspNetCorePills.Web\AspNetCorePills.Web.csproj", "{DCB9275E-4588-431A-82FB-63F73BE9D310}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePills.Web.Blazor", "AspNetCorePills.Web.Blazor\AspNetCorePills.Web.Blazor.csproj", "{AE0ACE21-8360-4294-9531-0E061CDAB7A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{DCB9275E-4588-431A-82FB-63F73BE9D310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCB9275E-4588-431A-82FB-63F73BE9D310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCB9275E-4588-431A-82FB-63F73BE9D310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE0ACE21-8360-4294-9531-0E061CDAB7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE0ACE21-8360-4294-9531-0E061CDAB7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE0ACE21-8360-4294-9531-0E061CDAB7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE0ACE21-8360-4294-9531-0E061CDAB7A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

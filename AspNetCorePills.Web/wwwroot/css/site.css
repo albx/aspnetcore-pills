@@ -1,0 +1,17 @@
+﻿h1 {
+    color: red;
+}
+
+h2 {
+    color: blue;
+}
+
+img {
+    width: 400px;
+    height: auto;
+}
+
+ul {
+    list-style-type: square;
+    background-color: lightgreen;
+}
