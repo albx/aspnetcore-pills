@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePills.Web", "AspN
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePills.Web.Blazor", "AspNetCorePills.Web.Blazor\AspNetCorePills.Web.Blazor.csproj", "{AE0ACE21-8360-4294-9531-0E061CDAB7A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePills.Todo", "AspNetCorePills.Todo\AspNetCorePills.Todo.csproj", "{27E0F48E-0FB0-0052-CB97-0BEDFFDDF715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePills.Web.Mvc", "AspNetCorePills.Web.Mvc\AspNetCorePills.Web.Mvc.csproj", "{3190E4E5-687A-4A1C-9ACD-C24338960B2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{AE0ACE21-8360-4294-9531-0E061CDAB7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE0ACE21-8360-4294-9531-0E061CDAB7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE0ACE21-8360-4294-9531-0E061CDAB7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E0F48E-0FB0-0052-CB97-0BEDFFDDF715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E0F48E-0FB0-0052-CB97-0BEDFFDDF715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E0F48E-0FB0-0052-CB97-0BEDFFDDF715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E0F48E-0FB0-0052-CB97-0BEDFFDDF715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3190E4E5-687A-4A1C-9ACD-C24338960B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3190E4E5-687A-4A1C-9ACD-C24338960B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3190E4E5-687A-4A1C-9ACD-C24338960B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3190E4E5-687A-4A1C-9ACD-C24338960B2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

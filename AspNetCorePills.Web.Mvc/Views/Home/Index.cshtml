@@ -1,0 +1,26 @@
+﻿@model AspNetCorePills.Web.Mvc.Models.Home.IndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Title</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<hr />
+<div class="row">
+    <form class="col-md-12" role="form" asp-action="Index" asp-controller="Home" method="post">
+        <div asp-validation-summary="All"></div>
+
+        <div class="mb-2">
+            <label asp-for="Title"></label>
+            <input class="form-control" type="text" asp-for="Title" />
+            <span class="text-danger" asp-validation-for="Title"></span>
+        </div>
+
+        <div class="mb-2">
+            <button class="btn btn-primary" type="submit">Send</button>
+        </div>
+    </form>
+</div>
