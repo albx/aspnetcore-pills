@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <ul class="list-group">
+            @foreach (var item in Model.Items)
+            {
+                <li class="list-group-item">@item.Title</li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <form method="post" asp-page="Index">
+            <div asp-validation-summary="All"></div>
+
+            <div class="mb-2">
+                <label asp-for="Todo.Title"></label>
+                <input type="text" asp-for="Todo.Title" class="form-control" />
+                <span asp-validation-for="Todo.Title"></span>
+            </div>
+
+            <div class="mb-2">
+                <button class="btn btn-primary" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
