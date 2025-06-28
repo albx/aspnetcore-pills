@@ -53,3 +53,11 @@ In questo quinto episodio di "Pillole di ASP.NET Core" capiamo insieme come abil
 In questo sesto episodio di "Pillole di ASP.NET Core" parliamo di Razor. Andiamo a vedere insieme come possiamo utilizzare questo linguaggio per creare pagine web dinamiche all'interno delle nostre applicazioni.
 
 ### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep6)
+
+## Episodio 7 - Static files
+
+[![Middleware](https://img.youtube.com/vi/E305oeRT7a8/0.jpg)](https://www.youtube.com/watch?v=E305oeRT7a8)
+
+In questo settimo episodio di "Pillole di ASP.NET Core" parliamo di Static files. Andiamo a vedere insieme come possiamo aggiungere i file statici alla nostra applicazione.
+
+### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep7)
