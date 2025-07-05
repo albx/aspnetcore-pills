@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePills.Web.Mvc", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePills.Web.RazorPages", "AspNetCorePills.Web.RazorPages\AspNetCorePills.Web.RazorPages.csproj", "{929EB580-1ACF-4E63-8811-57C33F444BF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCorePills.Web.MinimalApi", "AspNetCorePills.Web.MinimalApi\AspNetCorePills.Web.MinimalApi.csproj", "{F21B1CB7-2025-4B6B-A21E-5D0874CB4465}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{929EB580-1ACF-4E63-8811-57C33F444BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{929EB580-1ACF-4E63-8811-57C33F444BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{929EB580-1ACF-4E63-8811-57C33F444BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F21B1CB7-2025-4B6B-A21E-5D0874CB4465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F21B1CB7-2025-4B6B-A21E-5D0874CB4465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F21B1CB7-2025-4B6B-A21E-5D0874CB4465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F21B1CB7-2025-4B6B-A21E-5D0874CB4465}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

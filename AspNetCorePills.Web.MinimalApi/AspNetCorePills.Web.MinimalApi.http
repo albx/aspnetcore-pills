@@ -1,0 +1,30 @@
+@AspNetCorePills.Web.MinimalApi_HostAddress = http://localhost:5012
+
+GET {{AspNetCorePills.Web.MinimalApi_HostAddress}}/api/todos
+Accept: application/json
+
+###
+
+GET {{AspNetCorePills.Web.MinimalApi_HostAddress}}/api/todos/db1a64b6-bc5d-4a46-9da3-8a18cfc1376c
+Accept: application/json
+
+###
+
+POST {{AspNetCorePills.Web.MinimalApi_HostAddress}}/api/todos
+Content-Type: application/json
+{
+  "title": ""
+}
+
+###
+
+PUT {{AspNetCorePills.Web.MinimalApi_HostAddress}}/api/todos/{{todoId}}
+Content-Type: application/json
+{
+  "title": "Updated Todo"
+}
+
+###
+
+DELETE {{AspNetCorePills.Web.MinimalApi_HostAddress}}/api/todos/{{todoId}}
+Accept: application/json
