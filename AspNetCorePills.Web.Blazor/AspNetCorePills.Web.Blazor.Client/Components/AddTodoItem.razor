@@ -1,0 +1,29 @@
+﻿@inject ITodoService TodoService
+
+<EditForm Model="model" role="form" OnValidSubmit="SubmitAsync">
+    <DataAnnotationsValidator />
+
+    <div class="mb-2">
+        <label>Title</label>
+        <InputText @bind-Value="model.Title" class="form-control" />
+    </div>
+
+    <div class="mb-2">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+</EditForm>
+
+@code {
+    private TodoItem model = new();
+
+    [Parameter]
+    public EventCallback<TodoItem> OnItemAdded { get; set; }
+
+    private async Task SubmitAsync()
+    {
+        await TodoService.AddItem(model);
+        await OnItemAdded.InvokeAsync(model);
+
+        model = new();
+    }
+}

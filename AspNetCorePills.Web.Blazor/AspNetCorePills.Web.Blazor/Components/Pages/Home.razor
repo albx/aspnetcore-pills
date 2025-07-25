@@ -1,0 +1,14 @@
+﻿@page "/"
+@attribute [StreamRendering]
+
+@inject ITodoService TodoService
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<hr />
+
+<TodoListManager @rendermode="InteractiveAuto" />

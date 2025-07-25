@@ -21,20 +21,20 @@ public class IndexModel : PageModel
         _service = service;
     }
 
-    public void OnGet()
+    public async Task OnGetAsync()
     {
         _logger.LogInformation("OnGet called");
-        Items = _service.GetItems().ToArray();
+        Items = (await _service.GetItems()).ToArray();
     }
 
-    public void OnPost()
+    public async Task OnPostAsync()
     {
         if (ModelState.IsValid)
         {
-            _service.AddItem(Todo);
+            await _service.AddItem(Todo);
             Todo = new();
         }
 
-        Items = _service.GetItems().ToArray();
+        Items = (await _service.GetItems()).ToArray();
     }
 }

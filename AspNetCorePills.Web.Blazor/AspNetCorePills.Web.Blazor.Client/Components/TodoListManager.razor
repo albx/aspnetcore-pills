@@ -1,0 +1,17 @@
+﻿<div class="row">
+    @if (loading)
+    {
+        <div class="col">
+            <h2>Loading...</h2>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-8">
+            <TodoList Items="items" />
+        </div>
+        <div class="col-md-4">
+            <AddTodoItem OnItemAdded="RefreshItemsAsync" />
+        </div>
+    }
+</div>

@@ -1,6 +1,6 @@
 ﻿namespace AspNetCorePills.Todo;
 
-public class TodoService
+public class TodoService : ITodoService
 {
     public static List<TodoItem> Items { get; } = [
         new TodoItem { Id = Guid.Parse("40570B4B-5E0D-4CA5-92F1-37F4379F9C0E"), Title = "Learn C#" },
@@ -8,20 +8,22 @@ public class TodoService
         new TodoItem { Id = Guid.Parse("6B302A7E-8501-495B-832F-34623E6CDA0B"), Title = "Deploy to production" },
     ];
 
-    public IEnumerable<TodoItem> GetItems()
+    public Task<IEnumerable<TodoItem>> GetItems()
     {
-        return Items.OrderBy(item => item.Title);
+        return Task.FromResult(
+            Items.OrderBy(item => item.Title).AsEnumerable());
     }
 
-    public void AddItem(TodoItem item)
+    public Task AddItem(TodoItem item)
     {
         ArgumentNullException.ThrowIfNull(item);
 
         item.Id = Guid.NewGuid();
         Items.Add(item);
+        return Task.CompletedTask;
     }
 
-    public void UpdateItem(Guid todoId, TodoItem updatedItem)
+    public Task UpdateItem(Guid todoId, TodoItem updatedItem)
     {
         ArgumentNullException.ThrowIfNull(updatedItem);
         var item = Items.FirstOrDefault(i => i.Id == todoId);
@@ -30,9 +32,11 @@ public class TodoService
             throw new KeyNotFoundException($"Todo item with ID {todoId} not found.");
         }
         item.Title = updatedItem.Title;
+
+        return Task.CompletedTask;
     }
 
-    public void DeleteItem(Guid todoId)
+    public Task DeleteItem(Guid todoId)
     {
         var item = Items.FirstOrDefault(i => i.Id == todoId);
         if (item is null)
@@ -40,5 +44,7 @@ public class TodoService
             throw new KeyNotFoundException($"Todo item with ID {todoId} not found.");
         }
         Items.Remove(item);
+
+        return Task.CompletedTask;
     }
 }

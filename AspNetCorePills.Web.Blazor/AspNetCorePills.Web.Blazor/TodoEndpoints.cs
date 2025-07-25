@@ -1,18 +1,17 @@
 ﻿using AspNetCorePills.Todo;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AspNetCorePills.Web.MinimalApi;
+namespace AspNetCorePills.Web.Blazor;
 
 public static class TodoEndpoints
 {
     public static IEndpointRouteBuilder MapTodoEndpoints(this IEndpointRouteBuilder app)
     {
         var group = app.MapGroup("/api/todos");
-            //.RequireAuthorization();
 
         group.MapGet(
             "",
-            async (TodoService service) =>
+            async (ITodoService service) =>
             {
                 var todos = await service.GetItems();
                 return Results.Ok(todos);
@@ -20,7 +19,7 @@ public static class TodoEndpoints
 
         group.MapGet(
             "{todoId:guid}",
-            async (Guid todoId, TodoService service) =>
+            async (Guid todoId, ITodoService service) =>
             {
                 var todo = (await service.GetItems()).FirstOrDefault(item => item.Id == todoId);
                 if (todo is null)
@@ -34,16 +33,16 @@ public static class TodoEndpoints
 
         group.MapPost(
             "",
-            async ([FromBody] TodoItem todo, TodoService service) =>
+            async ([FromBody] TodoItem todo, ITodoService service) =>
             {
                 await service.AddItem(todo);
                 return Results.CreatedAtRoute("TodoDetail", new { todoId = todo.Id }, todo);
-            }).AddEndpointFilter<ValidationFilter>()
+            })
             .WithName("CreateTodoItem");
 
         group.MapPut(
             "{todoId:guid}",
-            async ([FromBody] TodoItem updatedTodo, Guid todoId, TodoService service) =>
+            async ([FromBody] TodoItem updatedTodo, Guid todoId, ITodoService service) =>
             {
                 await service.UpdateItem(todoId, updatedTodo);
                 return Results.NoContent();
@@ -52,7 +51,7 @@ public static class TodoEndpoints
 
         group.MapDelete(
             "{todoId:guid}",
-            async (Guid todoId, TodoService service) =>
+            async (Guid todoId, ITodoService service) =>
             {
                 await service.DeleteItem(todoId);
                 return Results.NoContent();
