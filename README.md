@@ -32,7 +32,7 @@ In questo terzo episodio di "Pillole di ASP.NET Core" andiamo a vedere insieme c
 
 ## Episodio 4 - Configuration
 
-[![Middleware](https://img.youtube.com/vi/eFZW2zFaY2o/0.jpg)](https://www.youtube.com/watch?v=eFZW2zFaY2o)
+[![Configuration](https://img.youtube.com/vi/eFZW2zFaY2o/0.jpg)](https://www.youtube.com/watch?v=eFZW2zFaY2o)
 
 In questo quarto episodio di "Pillole di ASP.NET Core" capiamo insieme come possiamo gestire file di configurazione e variabili di ambiente nelle nostre applicazioni ASP.NET Core.
 
@@ -40,7 +40,7 @@ In questo quarto episodio di "Pillole di ASP.NET Core" capiamo insieme come poss
 
 ## Episodio 5 - Logging
 
-[![Middleware](https://img.youtube.com/vi/evHkV360BZ0/0.jpg)](https://www.youtube.com/watch?v=evHkV360BZ0)
+[![Logging](https://img.youtube.com/vi/evHkV360BZ0/0.jpg)](https://www.youtube.com/watch?v=evHkV360BZ0)
 
 In questo quinto episodio di "Pillole di ASP.NET Core" capiamo insieme come abilitare il logging per poterlo poi utilizzare nelle nostre applicazioni ASP.NET Core.
 
@@ -56,8 +56,24 @@ In questo sesto episodio di "Pillole di ASP.NET Core" parliamo di Razor. Andiamo
 
 ## Episodio 7 - Static files
 
-[![Middleware](https://img.youtube.com/vi/E305oeRT7a8/0.jpg)](https://www.youtube.com/watch?v=E305oeRT7a8)
+[![Static files](https://img.youtube.com/vi/E305oeRT7a8/0.jpg)](https://www.youtube.com/watch?v=E305oeRT7a8)
 
 In questo settimo episodio di "Pillole di ASP.NET Core" parliamo di Static files. Andiamo a vedere insieme come possiamo aggiungere i file statici alla nostra applicazione.
 
 ### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep7)
+
+## Episodio 8 - MVC
+
+[![MVC](https://img.youtube.com/vi/TjSa3PlBdM0/0.jpg)](https://www.youtube.com/watch?v=TjSa3PlBdM0)
+
+In questo ottavo episodio di "Pillole di ASP.NET Core" parliamo di MVC. Andiamo a vedere insieme come possiamo utilizzare questo approccio per creare le nostre applicazioni web e le nostre API Rest.
+
+### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep8)
+
+## Episodio 9 - Razor pages
+
+[![Razor pages](https://img.youtube.com/vi/QyXbjaw4418/0.jpg)](https://www.youtube.com/watch?v=QyXbjaw4418)
+
+In questo nono episodio di "Pillole di ASP.NET Core" parliamo di Razor pages. Andiamo a vedere insieme come possiamo creare le nostre UI web utilizzando questa tecnologia.
+
+### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep9)
