@@ -77,3 +77,11 @@ In questo ottavo episodio di "Pillole di ASP.NET Core" parliamo di MVC. Andiamo 
 In questo nono episodio di "Pillole di ASP.NET Core" parliamo di Razor pages. Andiamo a vedere insieme come possiamo creare le nostre UI web utilizzando questa tecnologia.
 
 ### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep9)
+
+## Episodio 10 - Minimal API
+
+[![Minimal API](https://img.youtube.com/vi/g5LpqGJgaoU/0.jpg)](https://www.youtube.com/watch?v=g5LpqGJgaoU)
+
+In questo nono episodio di "Pillole di ASP.NET Core" parliamo di Minimal API. Andiamo a vedere insieme come possiamo utilizzare questo approccio per implementare le nostre API REST.
+
+### [Qui trovi il codice mostrato nel video](https://github.com/albx/aspnetcore-pills/tree/ep10)
