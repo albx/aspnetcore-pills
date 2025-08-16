@@ -1,4 +1,5 @@
 using AspNetCorePills.Web;
+using AspNetCorePills.Web.Hubs;
 using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,6 +28,8 @@ builder.Services.Configure<ConfigurationObject>(options =>
 
 //Scoped
 builder.Services.AddScoped<MyService>();
+
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -58,5 +61,7 @@ app.MapRazorPages();
 
 //        return $"Hello World! {service.GetValue()}";
 //    });
+
+app.MapHub<ChatHub>("/chatHub");
 
 app.Run();

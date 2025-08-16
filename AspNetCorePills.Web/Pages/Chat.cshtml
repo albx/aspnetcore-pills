@@ -1,0 +1,80 @@
+﻿@page
+@model AspNetCorePills.Web.Pages.ChatModel
+@{
+}
+
+<div class="container">
+    <div class="row p-1">
+        <h2 id="connectionStatus"></h2>
+    </div>
+
+    <div class="row p-1">
+        <div class="col-1">User</div>
+        <div class="col-5"><input type="text" id="userInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-1">Message</div>
+        <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6 text-end">
+            <button type="button" class="btn btn-primary" id="sendButton">Send</button>
+        </div>
+    </div>
+    <hr />
+    <div class="row p-1">
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/signalr/signalr.min.js"></script>
+    <script>
+        const updateConnectionStatus = (isConnected) => {
+            const connectionStatus = document.getElementById('connectionStatus');
+
+            if (isConnected) {
+                connectionStatus.textContent = 'Connected!';
+                connectionStatus.classList.remove('text-danger');
+                connectionStatus.classList.add('text-success');
+            }
+            else {
+                connectionStatus.textContent = 'Not connected';
+                connectionStatus.classList.remove('text-success');
+                connectionStatus.classList.add('text-danger');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            var connection = new signalR.HubConnectionBuilder()
+                .withUrl("/chatHub")
+                .withAutomaticReconnect()
+                .build();
+
+            connection.start()
+                .then(() => {
+                    updateConnectionStatus(true);
+                }).catch(() => {
+                    updateConnectionStatus(false);
+                })
+
+            connection.on('ReceiveMessage', (user, message) => {
+                var listItem = document.createElement('li');
+                listItem.textContent = `${user}: ${message}`;
+
+                document.getElementById('messagesList').appendChild(listItem);
+            });
+
+            document.getElementById('sendButton').addEventListener('click', (evt) => {
+                evt.preventDefault();
+
+                var user = document.getElementById('userInput').value;
+                var message = document.getElementById('messageInput').value;
+
+                connection.send('SendMessage', user, message);
+            });
+        });
+    </script>
+}

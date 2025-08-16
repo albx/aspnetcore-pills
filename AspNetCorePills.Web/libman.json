@@ -5,6 +5,10 @@
     {
       "library": "bootstrap@5.3.3",
       "destination": "wwwroot/bootstrap/"
+    },
+    {
+      "library": "microsoft-signalr@9.0.6",
+      "destination": "wwwroot/signalr/"
     }
   ]
 }
